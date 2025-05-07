@@ -71,7 +71,7 @@ const HomeScreen = () => {
                     {/* TODO: create it as a gradient, overlaid on top of the splash image. Move title to image area */}
                     <View style={ styles.splashDetailsBox }>
                         <Text style={ styles.splashTitle }>{ splashTitle }</Text>
-                        <Text style={ styles.splashDescription }>{ splashDetail }</Text>
+                        <Text style={ styles.splashDescription } adjustsFontSizeToFit={ true }>{ splashDetail }</Text>
                     </View>
                 </View>
 
@@ -138,6 +138,9 @@ const useStyles = () => {
         splashDescription: {
             padding: 10,
             paddingTop: 0,
+            paddingBottom: 0,
+            height: 70,
+            width: dimensions.width,
         },
         splashTitle: {
             padding: 10,
