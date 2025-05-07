@@ -12,11 +12,11 @@ type ProductBoxProps = {
 };
 
 const ProductBox = ( props: ProductBoxProps ) => {
+    // TODO: create/overlay the add and purchase buttons
     // getting styles
     const { styles }  = useStyles();
-
     return (
-        <View>
+        <View style={{ padding: 10 }}>
             <Image 
                 style={ styles.productImage }
                 source={{ uri: props.image }}
@@ -114,7 +114,6 @@ const useStyles = () => {
             // temporarily hard-coded dimensions
             width: 200,
             height: 267,
-            padding: 10
         },
         row: {
             flexDirection: 'row',
