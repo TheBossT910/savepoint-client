@@ -128,7 +128,7 @@ const useStyles = () => {
         },
         splashImage: {
             // temporarily hard-coded
-            height: 400, 
+            height: dimensions.height * (2/5), 
             width: dimensions.width,
         },
         splashDetailsBox: {
