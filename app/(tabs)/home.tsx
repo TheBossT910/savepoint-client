@@ -32,6 +32,8 @@ const HomeScreen = () => {
 
     // splash image url
     const splashURL = 'https://images.igdb.com/igdb/image/upload/t_1080p/scahhs.jpg'
+    const splashDetail = 'Your Ultimate Horizon Adventure awaits! Explore the vibrant and ever-evolving open-world landscapes of Mexico with limitless, fun driving action in hundreds of the world’s greatest cars.';
+    const splashTitle = 'Forza Horizon 5';
 
     // all product urls
     const productURLs = [
@@ -58,10 +60,20 @@ const HomeScreen = () => {
 
     return(
         <View style={ styles.center }>
-            {/* Vertical scroll */}
-            <ScrollView>
-                {/* Displaying splash */}
-                <Image style={ styles.splashImage } source={{ uri: splashURL }}/>
+            {/* Vertical scroll*/}
+            <ScrollView contentContainerStyle={ styles.mainScrollView }>
+            {/* Displaying splash */}
+                <View>
+                    {/* Splash image */}
+                    <Image style={ styles.splashImage } source={{ uri: splashURL }}/>
+
+                    {/* Details box */}
+                    {/* TODO: create it as a gradient, overlaid on top of the splash image. Move title to image area */}
+                    <View style={ styles.splashDetailsBox }>
+                        <Text style={ styles.splashTitle }>{ splashTitle }</Text>
+                        <Text style={ styles.splashDescription }>{ splashDetail }</Text>
+                    </View>
+                </View>
 
                 {/* Displaying lists */}
                 <View>
@@ -93,6 +105,11 @@ const useStyles = () => {
             justifyContent: 'center',
             alignItems: 'center',
         },
+        mainScrollView: {
+            flex: 0,
+            // adding this padding allows us to scroll past the navbar and properly see all content
+            paddingBottom: 100,
+        },
         productImage: {
             // temporarily hard-coded dimensions
             width: 200,
@@ -113,6 +130,22 @@ const useStyles = () => {
             // temporarily hard-coded
             height: 400, 
             width: dimensions.width,
+        },
+        splashDetailsBox: {
+            height: 100,
+            width: dimensions.width,
+            backgroundColor: 'grey',
+        },
+        splashDescription: {
+            padding: 10,
+            paddingTop: 0,
+        },
+        splashTitle: {
+            padding: 10,
+            paddingTop: 0,
+            paddingBottom: 0,
+            fontSize: 20,
+            fontWeight: 'bold',
         }
     });
 
