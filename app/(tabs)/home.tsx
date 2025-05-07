@@ -56,7 +56,7 @@ const HomeScreen = () => {
     ];
 
     // creating a ProductBox prop for all products in productURLs
-    const products = productURLs.map( product => <ProductBox image={ product.url }/>);
+    const products = productURLs.map( product => <ProductBox key={ product.id } image={ product.url }/>);
 
     return(
         <View style={ styles.center }>
