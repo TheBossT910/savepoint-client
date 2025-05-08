@@ -19,6 +19,7 @@ const useStyles = () => {
             flex: 0,
             // adding this padding allows us to scroll past the navbar and properly see all content
             paddingBottom: 100,
+            flexGrow: 1
         },
         productImage: {
             // TODO: fix. temporarily hard-coded dimensions
