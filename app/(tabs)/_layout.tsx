@@ -33,7 +33,7 @@ export default function TabLayout() {
           tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
         }}
       />
-      {/* <Tabs.Screen
+      <Tabs.Screen
         name="details"
         options={{
           title: 'Details',
@@ -41,19 +41,19 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="propsExample"
+        name="examples/props"
         options={{
           title: 'ex. Props',
           tabBarIcon: ({ color }) => <IconSymbol size={28} name="terminal" color={color} />,
         }}
       />
       <Tabs.Screen
-        name="stateExample"
+        name="examples/state"
         options={{
           title: 'ex. State',
           tabBarIcon: ({ color }) => <IconSymbol size={28} name="terminal" color={color} />,
         }}
-      /> */}
+      />
     </Tabs>
   );
 }

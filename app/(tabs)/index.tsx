@@ -1,6 +1,6 @@
 // Taha Rashid
 // May 8, 2025
-// exporting the home/index.tsx as the root
+// Home screen
 
 import HomeScreen from "@/screens/home/index";
 export default HomeScreen;

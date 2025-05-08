@@ -23,7 +23,7 @@ const Greeting = (props: GreetingProps) => {
 }
 
 // main 'view'
-const HelloWorldApp = () => {
+const PropsScreen = () => {
     return (
         <View
         style={[styles.center, {top: 500}]}>
@@ -33,4 +33,4 @@ const HelloWorldApp = () => {
     );
 };
 
-export default HelloWorldApp;
+export default PropsScreen;

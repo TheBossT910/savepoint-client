@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {View, Text, Button, StyleSheet} from 'react-native';
 
-const App = () => {
+const StateScreen = () => {
     // setting initial state to 0
     const [count, setCount] = useState(0);
 
@@ -25,4 +25,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default App;
+export default StateScreen;
