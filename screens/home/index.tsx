@@ -68,13 +68,13 @@ const HomeScreen = () => {
                 {/* Displaying lists */}
                 <View>
                     <Text style={ styles.listTitle }>Trending</Text>
-                    <ScrollView contentContainerStyle={ styles.row } horizontal={true}>
+                    <ScrollView horizontal={true}>
                         {/* Displaying a list of products */}
                         { products }
                     </ScrollView>
 
                     <Text style={ styles.listTitle }>Highly Rated</Text>
-                    <ScrollView contentContainerStyle={ styles.row } horizontal={true}>
+                    <ScrollView horizontal={true}>
                         {/* Displaying a list of products */}
                         { products }
                     </ScrollView>

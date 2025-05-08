@@ -25,18 +25,13 @@ const useStyles = () => {
             width: 200,
             height: 267,
         },
-        row: {
-            flexDirection: 'row',
-            justifyContent: 'flex-start',
-            alignItems: 'flex-start',
-        },
         listTitle: {
             padding: 10,
             paddingBottom: 0,
             fontSize: 20,
         },
         splashImage: {
-            // temporarily hard-coded
+            // TODO: fix. temporarily hard-coded
             height: dimensions.height * (2/5), 
             width: dimensions.width,
         },
