@@ -4,6 +4,7 @@
 
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
+import useStyles from './styles';
 
 // main screen
 const DetailsScreen = () => {
@@ -15,18 +16,6 @@ const DetailsScreen = () => {
             <Text>Hello, world!</Text>
         </View>
     );
-};
-
-const useStyles = () => {
-    const styles = StyleSheet.create({
-        center: {
-            flex: 1,
-            justifyContent: 'center',
-            alignItems: 'center',
-        },
-    });
-
-    return { styles };
 };
 
 export default DetailsScreen;
