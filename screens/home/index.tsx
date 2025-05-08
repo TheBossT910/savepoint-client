@@ -3,7 +3,7 @@
 // Home view
 
 import React from 'react';
-import { useWindowDimensions, ScrollView, Image, View, Text, StyleSheet } from 'react-native';
+import { ScrollView, Image, View, Text } from 'react-native';
 
 import { ProductBox } from "@/components/ProductBox"
 import useStyles from "./styles";
@@ -83,66 +83,5 @@ const HomeScreen = () => {
         </View>
     );
 };
-
-// styles
-// const useStyles = () => {
-//     const dimensions = useWindowDimensions();
-
-//     // stylesheet
-//     const styles = StyleSheet.create({
-//         center: {
-//             flex: 1,
-//             justifyContent: 'center',
-//             alignItems: 'center',
-//         },
-//         mainScrollView: {
-//             flex: 0,
-//             // adding this padding allows us to scroll past the navbar and properly see all content
-//             paddingBottom: 100,
-//         },
-//         productImage: {
-//             // temporarily hard-coded dimensions
-//             width: 200,
-//             height: 267,
-//         },
-//         row: {
-//             flexDirection: 'row',
-//             justifyContent: 'flex-start',
-//             alignItems: 'flex-start',
-//         },
-//         listTitle: {
-//             padding: 10,
-//             paddingBottom: 0,
-//             fontSize: 20,
-//         },
-//         splashImage: {
-//             // temporarily hard-coded
-//             height: dimensions.height * (2/5), 
-//             width: dimensions.width,
-//         },
-//         splashDetailsBox: {
-//             height: 100,
-//             width: dimensions.width,
-//             backgroundColor: 'grey',
-//         },
-//         splashDescription: {
-//             padding: 10,
-//             paddingTop: 0,
-//             paddingBottom: 0,
-//             height: 70,
-//             width: dimensions.width,
-//         },
-//         splashTitle: {
-//             padding: 10,
-//             paddingTop: 0,
-//             paddingBottom: 0,
-//             fontSize: 20,
-//             fontWeight: 'bold',
-//         }
-//     });
-
-//     // exporting style sheet
-//     return { styles };
-// }
 
 export default HomeScreen;
