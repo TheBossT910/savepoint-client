@@ -3,17 +3,90 @@
 // Product details view
 
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, Image, ScrollView, Button, Pressable } from 'react-native';
+
 import useStyles from './styles';
+import { ProductBox } from '@/components/ProductBox';
 
 // main screen
 const DetailsScreen = () => {
     // getting styles
     const { styles } = useStyles();
 
+    const coverURL = 'https://images.igdb.com/igdb/image/upload/t_1080p/co2e25.jpg';
+    const productName = 'Forza Horizon 3';
+    const productDescription = 'You’re in charge of the Horizon Festival. Customize everything, hire and fire your friends, and explore Australia in over 350 of the world’s greatest cars. Make your Horizon the ultimate celebration of cars, music, and freedom of the open road. How you get there is up to you.';
+    
+    const productImagesURLs= [
+        {
+            id: 0,
+            url: "https://images.igdb.com/igdb/image/upload/t_1080p/gandhrp2rigbws03src1.jpg",
+        },
+        {
+            id: 1,
+            url: "https://images.igdb.com/igdb/image/upload/t_1080p/myjwiby66b6ge2mdt8oe.jpg",
+        },
+        {
+            id: 2,
+            url: "https://images.igdb.com/igdb/image/upload/t_1080p/gaq2zazdgb1r01kiavgz.jpg"
+        },
+        {
+            id: 3,
+            url: "https://images.igdb.com/igdb/image/upload/t_1080p/frxljlqm8d1xiefpbdhq.jpg",
+        },
+        {
+            id: 4,
+            url: "https://images.igdb.com/igdb/image/upload/t_1080p/rcn1hi35udaatrailha2.jpg",
+        },
+    ];
+    const productImages = productImagesURLs.map( image => {
+        return (
+            <View style={{ padding: 5 }} key={ image.id }>
+                <Image 
+                    style={{ width: 320, height: 180 }}
+                    source={{ uri: image.url }}
+                />
+            </View>
+        );
+    });
+
     return(
         <View style={ styles.center }>
-            <Text>Hello, world!</Text>
+            <ScrollView contentContainerStyle={ styles.mainScrollView }>
+                {/* Top area */}
+                <View style={ styles.row }>
+                    <ProductBox image={ coverURL } width={ styles.productImage.width } height={ styles.productImage.height } />
+
+                    {/* vertically align items */}
+                    <View style={ [styles.column, styles.center] }>
+                        <Text style={ styles.title }>{ productName }</Text>
+
+                        {/* Buy button */}
+                        <View style={{ padding: 5 }}>
+                            <Pressable style={[ styles.button, { backgroundColor: '#00FFB2'} ]} onPress={ () => console.log("'Buy' presssed") }>
+                                <Text style={ styles.buttonText }>Buy</Text>
+                            </Pressable>
+                        </View>
+
+                        {/* Add to collection button */}
+                        <View style={{ padding: 5 }}>
+                            <Pressable style={[ styles.button, { backgroundColor: '#FF0000' } ]} onPress={ () => console.log("'Add' presssed") }>
+                                <Text style={ styles.buttonText }>Add</Text>
+                            </Pressable>
+                        </View>
+                    </View>
+                </View>
+
+                {/* description area */}
+                <View>
+                    <Text style={{ padding: 10 }}>{ productDescription }</Text>
+                    {/* TODO: implement autoscrolling, https://www.npmjs.com/package/react-native-auto-scrolling? */}
+                    {/* displays all the images */}
+                    <ScrollView horizontal={ true }>
+                        { productImages }
+                    </ScrollView>
+                </View>
+            </ScrollView>
         </View>
     );
 };
