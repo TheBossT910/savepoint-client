@@ -1,74 +1,158 @@
-import { Image, StyleSheet, Platform } from 'react-native';
+// Taha Rashid
+// May 7, 2025
+// Home view
 
-import { HelloWave } from '@/components/HelloWave';
-import ParallaxScrollView from '@/components/ParallaxScrollView';
-import { ThemedText } from '@/components/ThemedText';
-import { ThemedView } from '@/components/ThemedView';
+import React from 'react';
+import { useWindowDimensions, ScrollView, Image, View, Text, StyleSheet } from 'react-native';
 
-export default function HomeScreen() {
-  return (
-    <ParallaxScrollView
-      headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
-      headerImage={
-        <Image
-          source={require('@/assets/images/partial-react-logo.png')}
-          style={styles.reactLogo}
-        />
-      }>
-      <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Welcome!</ThemedText>
-        <HelloWave />
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 1: Try it</ThemedText>
-        <ThemedText>
-          Edit <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> to see changes.
-          Press{' '}
-          <ThemedText type="defaultSemiBold">
-            {Platform.select({
-              ios: 'cmd + d',
-              android: 'cmd + m',
-              web: 'F12'
-            })}
-          </ThemedText>{' '}
-          to open developer tools.
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 2: Explore</ThemedText>
-        <ThemedText>
-          Tap the Explore tab to learn more about what's included in this starter app.
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 3: Get a fresh start</ThemedText>
-        <ThemedText>
-          When you're ready, run{' '}
-          <ThemedText type="defaultSemiBold">npm run reset-project</ThemedText> to get a fresh{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> directory. This will move the current{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> to{' '}
-          <ThemedText type="defaultSemiBold">app-example</ThemedText>.
-        </ThemedText>
-      </ThemedView>
-    </ParallaxScrollView>
-  );
+// props
+// product box
+type ProductBoxProps = {
+    image: string;
+};
+
+const ProductBox = ( props: ProductBoxProps ) => {
+    // TODO: create/overlay the add and purchase buttons
+    // getting styles
+    const { styles }  = useStyles();
+    return (
+        <View style={{ padding: 10 }}>
+            <Image 
+                style={ styles.productImage }
+                source={{ uri: props.image }}
+            />
+        </View>
+    );
+};
+
+// main screen
+const HomeScreen = () => {
+    // getting styles
+    const { styles }  = useStyles();
+
+    // splash image url
+    const splashURL = 'https://images.igdb.com/igdb/image/upload/t_1080p/scahhs.jpg'
+    const splashDetail = 'Your Ultimate Horizon Adventure awaits! Explore the vibrant and ever-evolving open-world landscapes of Mexico with limitless, fun driving action in hundreds of the world’s greatest cars.';
+    const splashTitle = 'Forza Horizon 5';
+
+    // all product urls
+    const productURLs = [
+        { 
+            id: 0,  // TODO: use actual DB product keys instead of # ids. This is temporary
+            url: 'https://images.igdb.com/igdb/image/upload/t_1080p/co2e25.jpg' 
+        }, 
+        {
+            id: 1,
+            url: 'https://images.igdb.com/igdb/image/upload/t_1080p/co21ro.jpg'
+        },
+        {
+            id: 2,
+            url: 'https://images.igdb.com/igdb/image/upload/t_1080p/co721v.jpg'
+        },
+        {
+            id: 3,
+            url: 'https://images.igdb.com/igdb/image/upload/t_1080p/co2f5s.jpg'
+        }
+    ];
+
+    // creating a ProductBox prop for all products in productURLs
+    const products = productURLs.map( product => <ProductBox key={ product.id } image={ product.url }/>);
+
+    return(
+        <View style={ styles.center }>
+            {/* Vertical scroll*/}
+            <ScrollView contentContainerStyle={ styles.mainScrollView }>
+            {/* Displaying splash */}
+                <View>
+                    {/* Splash image */}
+                    <Image style={ styles.splashImage } source={{ uri: splashURL }}/>
+
+                    {/* Details box */}
+                    {/* TODO: create it as a gradient, overlaid on top of the splash image. Move title to image area */}
+                    <View style={ styles.splashDetailsBox }>
+                        <Text style={ styles.splashTitle }>{ splashTitle }</Text>
+                        <Text style={ styles.splashDescription } adjustsFontSizeToFit={ true }>{ splashDetail }</Text>
+                    </View>
+                </View>
+
+                {/* Displaying lists */}
+                <View>
+                    <Text style={ styles.listTitle }>Trending</Text>
+                    <ScrollView contentContainerStyle={ styles.row } horizontal={true}>
+                        {/* Displaying a list of products */}
+                        { products }
+                    </ScrollView>
+
+                    <Text style={ styles.listTitle }>Highly Rated</Text>
+                    <ScrollView contentContainerStyle={ styles.row } horizontal={true}>
+                        {/* Displaying a list of products */}
+                        { products }
+                    </ScrollView>
+                </View>
+            </ScrollView>
+        </View>
+    );
+};
+
+// styles
+const useStyles = () => {
+    const dimensions = useWindowDimensions();
+
+    // stylesheet
+    const styles = StyleSheet.create({
+        center: {
+            flex: 1,
+            justifyContent: 'center',
+            alignItems: 'center',
+        },
+        mainScrollView: {
+            flex: 0,
+            // adding this padding allows us to scroll past the navbar and properly see all content
+            paddingBottom: 100,
+        },
+        productImage: {
+            // temporarily hard-coded dimensions
+            width: 200,
+            height: 267,
+        },
+        row: {
+            flexDirection: 'row',
+            justifyContent: 'flex-start',
+            alignItems: 'flex-start',
+        },
+        listTitle: {
+            padding: 10,
+            paddingBottom: 0,
+            fontSize: 20,
+        },
+        splashImage: {
+            // temporarily hard-coded
+            height: dimensions.height * (2/5), 
+            width: dimensions.width,
+        },
+        splashDetailsBox: {
+            height: 100,
+            width: dimensions.width,
+            backgroundColor: 'grey',
+        },
+        splashDescription: {
+            padding: 10,
+            paddingTop: 0,
+            paddingBottom: 0,
+            height: 70,
+            width: dimensions.width,
+        },
+        splashTitle: {
+            padding: 10,
+            paddingTop: 0,
+            paddingBottom: 0,
+            fontSize: 20,
+            fontWeight: 'bold',
+        }
+    });
+
+    // exporting style sheet
+    return { styles };
 }
 
-const styles = StyleSheet.create({
-  titleContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 8,
-  },
-  stepContainer: {
-    gap: 8,
-    marginBottom: 8,
-  },
-  reactLogo: {
-    height: 178,
-    width: 290,
-    bottom: 0,
-    left: 0,
-    position: 'absolute',
-  },
-});
+export default HomeScreen;
