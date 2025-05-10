@@ -3,7 +3,7 @@
 // ProductBox
 
 import React from 'react';
-import { Image, View, Text, StyleSheet } from 'react-native';
+import { Image, View } from 'react-native';
 
 // product box
 type ProductBoxProps = {
