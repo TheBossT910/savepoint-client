@@ -43,12 +43,9 @@ const useStyles = () => {
             width: 100,
             height: 50,
             padding: 5,
-            justifyContent: 'center',
-            alignItems: 'center',
-        },
-        buttonText: {
+            backgroundColor: 'red',
             color: 'white',
-        }
+        },
     });
 
     // exporting style sheet

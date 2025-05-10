@@ -3,10 +3,12 @@
 // Product details view
 
 import React from 'react';
-import { View, Text, Image, ScrollView, Button, Pressable } from 'react-native';
+import { View, Text, Image, ScrollView, Pressable } from 'react-native';
 
 import useStyles from './styles';
 import { ProductBox } from '@/components/ProductBox';
+import { Retailer } from '@/components/Retailers';
+import { CustomButton } from '@/components/Button';
 
 // main screen
 const DetailsScreen = () => {
@@ -62,18 +64,11 @@ const DetailsScreen = () => {
                         <Text style={ styles.title }>{ productName }</Text>
 
                         {/* Buy button */}
-                        <View style={{ padding: 5 }}>
-                            <Pressable style={[ styles.button, { backgroundColor: '#00FFB2'} ]} onPress={ () => console.log("'Buy' presssed") }>
-                                <Text style={ styles.buttonText }>Buy</Text>
-                            </Pressable>
-                        </View>
+                        <CustomButton style={ styles.button } colors={{ backgroundColor: '#00FFB2', color: 'white' }} text={ 'Buy' } onPress={ () => console.log('Buy button pressed') }/>
 
                         {/* Add to collection button */}
-                        <View style={{ padding: 5 }}>
-                            <Pressable style={[ styles.button, { backgroundColor: '#FF0000' } ]} onPress={ () => console.log("'Add' presssed") }>
-                                <Text style={ styles.buttonText }>Add</Text>
-                            </Pressable>
-                        </View>
+                        <CustomButton style={ styles.button } colors={{ backgroundColor: '#FF0000', color: 'white' }} text={ 'Add' } onPress={ () => console.log('Add button pressed') }/>
+
                     </View>
                 </View>
 
@@ -90,7 +85,6 @@ const DetailsScreen = () => {
                 {/* Stores/purchase area */}
                 <View>
                     <Text>Retailers</Text>
-                    
                 </View>
             </ScrollView>
         </View>
