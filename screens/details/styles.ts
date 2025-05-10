@@ -46,6 +46,11 @@ const useStyles = () => {
             backgroundColor: 'red',
             color: 'white',
         },
+        retailerTitle: {
+            padding: 10,
+            paddingBottom: 0,
+            fontSize: 20,
+        }
     });
 
     // exporting style sheet

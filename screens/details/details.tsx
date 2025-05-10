@@ -83,7 +83,7 @@ const DetailsScreen = () => {
 
                 {/* Stores/purchase area */}
                 <View>
-                    <Text>Retailers</Text>
+                    <Text style={ styles.retailerTitle }>Retailers</Text>
                     <Retailer name={ 'Mithu Games' } rating={ 8.5 } quantity={ 3 }/>
                     <Retailer name={ 'Mithu Games' } rating={ 8.5 } quantity={ 3 }/>
                     <Retailer name={ 'Mithu Games' } rating={ 8.5 } quantity={ 3 }/>
