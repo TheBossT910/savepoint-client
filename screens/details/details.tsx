@@ -43,7 +43,7 @@ const DetailsScreen = () => {
         return (
             <View style={{ padding: 5 }} key={ image.id }>
                 <Image 
-                    style={{ width: 320, height: 180 }}
+                    style={{ width: 240, height: 135 }}
                     source={{ uri: image.url }}
                 />
             </View>
@@ -85,6 +85,12 @@ const DetailsScreen = () => {
                     <ScrollView horizontal={ true }>
                         { productImages }
                     </ScrollView>
+                </View>
+
+                {/* Stores/purchase area */}
+                <View>
+                    <Text>Retailers</Text>
+                    
                 </View>
             </ScrollView>
         </View>
