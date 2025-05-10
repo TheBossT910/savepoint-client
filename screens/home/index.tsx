@@ -52,7 +52,7 @@ const HomeScreen = () => {
         <View style={ styles.center }>
             {/* Vertical scroll*/}
             <ScrollView contentContainerStyle={ styles.mainScrollView }>
-            {/* Displaying splash */}
+                {/* Displaying splash */}
                 <View>
                     {/* Splash image */}
                     <Image style={ styles.splashImage } source={{ uri: splashURL }}/>
