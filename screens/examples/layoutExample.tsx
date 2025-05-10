@@ -9,10 +9,13 @@ import useStyles from './styles';
 const LayoutScreen = () => {
     // getting styles
     const { styles } = useStyles();
-    
+
     return (
-        <View>
-            <Text>Hello, world</Text>
+        <View style={ styles.center }>
+            <View style={[ styles.container, styles.center ]}>
+                <View style={ styles.squareRed }></View>
+                <View style={ styles.squareGreen }></View>
+            </View>
         </View>
     );
 };
