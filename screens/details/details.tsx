@@ -64,11 +64,10 @@ const DetailsScreen = () => {
                         <Text style={ styles.title }>{ productName }</Text>
 
                         {/* Buy button */}
-                        <CustomButton style={ styles.button } colors={{ backgroundColor: '#00FFB2', color: 'white' }} text={ 'Buy' } onPress={ () => console.log('Buy button pressed') }/>
+                        <CustomButton style={ styles.button } properties={{ backgroundColor: '#00FFB2', color: 'white' }} text={ 'Buy' } onPress={ () => console.log('Buy button pressed') }/>
 
                         {/* Add to collection button */}
-                        <CustomButton style={ styles.button } colors={{ backgroundColor: '#FF0000', color: 'white' }} text={ 'Add' } onPress={ () => console.log('Add button pressed') }/>
-
+                        <CustomButton style={ styles.button } properties={{ backgroundColor: '#FF0000', color: 'white' }} text={ 'Add' } onPress={ () => console.log('Add button pressed') }/>
                     </View>
                 </View>
 

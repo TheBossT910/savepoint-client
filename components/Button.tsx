@@ -13,9 +13,10 @@ type ButtonProps = {
         padding: number;
 
     };
-    colors: {
-        backgroundColor: string;
-        color: string;
+    properties: {
+        backgroundColor?: string;
+        color?: string;
+        borderRadius?: number;
     }
     onPress: () => void;
 };
@@ -26,7 +27,8 @@ export const CustomButton = ( props: ButtonProps ) => {
             width: props.style.width,
             height: props.style.height,
             padding: 5,
-            backgroundColor: props.colors.backgroundColor,
+            backgroundColor: props.properties.backgroundColor,
+            borderRadius: props.properties.borderRadius,
             justifyContent: 'center',
             alignItems: 'center',
         },
@@ -34,7 +36,7 @@ export const CustomButton = ( props: ButtonProps ) => {
             padding: props.style.padding,
         },
         buttonText: {
-            color: props.colors.color
+            color: props.properties.color
         }
     })
 
