@@ -7,12 +7,15 @@ import { View, Text } from 'react-native';
 
 type RetailerProps = {
     name: string;
+    rating: number;
+    quantity: number;
 }
 
 export const Retailer = ( props: RetailerProps ) => {
     return(
         <View>
-            <Text>Hello, { props.name }!</Text>
+            <Text>{ props.name }</Text>
+            
         </View>
     );
 }
