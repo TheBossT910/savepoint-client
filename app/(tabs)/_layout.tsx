@@ -54,6 +54,13 @@ export default function TabLayout() {
           tabBarIcon: ({ color }) => <IconSymbol size={28} name="terminal" color={color} />,
         }}
       />
+      <Tabs.Screen
+        name="examples/layout"
+        options={{
+          title: 'ex. Layout',
+          tabBarIcon: ({ color }) => <IconSymbol size={28} name="terminal" color={color} />,
+        }}
+      />
     </Tabs>
   );
 }
