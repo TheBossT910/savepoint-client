@@ -5,7 +5,7 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
-import { CustomButton } from '@/components/Button';
+import { CustomButton } from '@/components/CustomButton';
 
 type RetailerProps = {
     name: string;

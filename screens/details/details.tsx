@@ -8,7 +8,7 @@ import { View, Text, Image, ScrollView, Pressable } from 'react-native';
 import useStyles from './styles';
 import { ProductBox } from '@/components/ProductBox';
 import { Retailer } from '@/components/Retailers';
-import { CustomButton } from '@/components/Button';
+import { CustomButton } from '@/components/CustomButton';
 
 // main screen
 const DetailsScreen = () => {
