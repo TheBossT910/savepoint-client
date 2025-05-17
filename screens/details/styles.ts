@@ -46,9 +46,10 @@ const useStyles = () => {
             backgroundColor: 'red',
             color: 'white',
         },
-        retailerTitle: {
+        subtitle: {
             padding: 10,
             paddingBottom: 0,
+            paddingTop: 5,
             fontSize: 20,
         }
     });

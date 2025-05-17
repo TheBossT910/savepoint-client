@@ -64,18 +64,20 @@ const DetailsScreen = () => {
                         <Text style={ styles.title }>{ productName }</Text>
 
                         {/* Buy button */}
-                        <CustomButton style={ styles.button } properties={{ backgroundColor: '#00FFB2', color: 'white' }} text={ 'Buy' } onPress={ () => console.log('Buy button pressed') }/>
+                        <CustomButton style={ styles.button } properties={{ backgroundColor: '#33b249', color: 'white', borderRadius: 5 }} text={ 'Buy' } onPress={ () => console.log('Buy button pressed') }/>
 
                         {/* Add to collection button */}
-                        <CustomButton style={ styles.button } properties={{ backgroundColor: '#FF0000', color: 'white' }} text={ 'Add' } onPress={ () => console.log('Add button pressed') }/>
+                        <CustomButton style={ styles.button } properties={{ backgroundColor: '#FF0000', color: 'white', borderRadius: 5 }} text={ 'Add' } onPress={ () => console.log('Add button pressed') }/>
                     </View>
                 </View>
 
                 {/* description area */}
                 <View>
+                    <Text style={ styles.subtitle }>Description</Text>
                     <Text style={{ padding: 10 }}>{ productDescription }</Text>
                     {/* TODO: implement autoscrolling, https://www.npmjs.com/package/react-native-auto-scrolling? */}
                     {/* displays all the images */}
+                    <Text style={ styles.subtitle }>Images</Text>
                     <ScrollView horizontal={ true }>
                         { productImages }
                     </ScrollView>
@@ -83,7 +85,7 @@ const DetailsScreen = () => {
 
                 {/* Stores/purchase area */}
                 <View>
-                    <Text style={ styles.retailerTitle }>Retailers</Text>
+                    <Text style={ styles.subtitle }>Retailers</Text>
                     <Retailer name={ 'Mithu Games' } rating={ 8.5 } quantity={ 3 }/>
                     <Retailer name={ 'Mithu Games' } rating={ 8.5 } quantity={ 3 }/>
                     <Retailer name={ 'Mithu Games' } rating={ 8.5 } quantity={ 3 }/>
