@@ -5,22 +5,20 @@
 import { Products } from "../interfaces/api"
 import axios from "axios"
 
-export const fetchProducts = async(): Promise<Products[]> => {
-    const response = await axios.get<Products[]>('http://localhost:8080/products/lists/popular')
-    return response.data
-}
+const address = '192.168.2.97'
+// const address = 'localhost'
 
 export const productService = {
     getListsPopular: async () => {
-        const response = await axios.get<Products[]>('http://localhost:8080/products/lists/popular')
+        const response = await axios.get<Products[]>(`http://${address}:8080/products/lists/popular`)
         return response.data
     },
     getListsTrending: async () => {
-        const response = await axios.get<Products[]>('http://localhost:8080/products/lists/trending')
+        const response = await axios.get<Products[]>(`http://${address}:8080/products/lists/trending`)
         return response.data
     },
     getListsHighestRated: async ( platform: string) => {
-        const response = await axios.get<Products[]>('http://localhost:8080/products/lists/highest-rated', {
+        const response = await axios.get<Products[]>(`http://${address}:8080/products/lists/highest-rated`, {
             params: {
                 platform: platform,
             }
@@ -29,5 +27,18 @@ export const productService = {
     }
 }
 
+export const developerService = {
+    getGetProducts: async ( recordId: string ) => {
+        const response = await axios.get<Products[]>(`http://${address}:8080/developer/get-products`, {
+            params: {
+                id: recordId,
+            }
+        })
+        return response.data
+    }
+}
+
 // DEBUG
 // console.log(fetchProducts())
+// developerService.getGetProducts('e408dad8-23e1-46c5-9b8a-7e47cc7eb114')
+//     .then( (data) => console.log(data) )
