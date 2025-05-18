@@ -32,7 +32,7 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="details"
+        name="details/[id]"
         options={{
           title: 'Details',
           tabBarIcon: ({ color }) => <IconSymbol size={28} name="book.pages" color={color} />,
@@ -56,6 +56,13 @@ export default function TabLayout() {
         name="examples/layout"
         options={{
           title: 'ex. Layout',
+          tabBarIcon: ({ color }) => <IconSymbol size={28} name="terminal" color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name="examples/services"
+        options={{
+          title: 'ex. Services',
           tabBarIcon: ({ color }) => <IconSymbol size={28} name="terminal" color={color} />,
         }}
       />
