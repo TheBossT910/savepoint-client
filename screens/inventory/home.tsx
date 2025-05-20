@@ -4,10 +4,12 @@
 
 import React from 'react';
 import { View, Text } from 'react-native';
+import useStyles from './styles';
 
 const InventoryHomeScreen = () => {
+    const { styles } = useStyles();
     return(
-        <View>
+        <View style={ styles.center }>
             <Text>Hello, world!</Text>
         </View>
     )
