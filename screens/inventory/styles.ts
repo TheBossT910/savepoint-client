@@ -15,6 +15,46 @@ const useStyles = () => {
             justifyContent: 'center',
             alignItems: 'center',
         },
+        column: {
+            flex: 1,
+            flexDirection: 'column',
+        },
+        row: {
+            flexDirection: 'row',
+            flexWrap: 'wrap',
+        },
+        productCard: {
+            backgroundColor: 'red',
+            flexDirection: 'row',
+            width: 352,
+            height: 151,
+        },
+        coverSection: {
+            flex: 3,
+            flexDirection: 'column',
+            backgroundColor: 'yellow',
+        },
+        titleSection: {
+            flex: 5,
+            flexDirection: 'column',
+            backgroundColor: 'blue',
+        },
+        titleArea: {
+            flex: 2,
+            flexDirection: 'row',
+        },
+        conditionsArea: {
+            flex: 1,
+            flexDirection: 'row',
+        },
+        totalProductsArea: {
+            flex: 1,
+        },
+        addButtonArea: {
+            flex: 1,
+            position: 'absolute',
+            bottom: 0
+        }
     });
 
     // exporting style sheet
