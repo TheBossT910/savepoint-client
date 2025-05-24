@@ -17,3 +17,22 @@ export interface IProducts {
     price_loose: number,
     price_last_updated: number
 }
+
+export interface IProductsInventory {
+    type: {
+        new: number
+        complete: number
+        used: number
+    }
+    condition: {
+        new: number
+        excellent: number
+        veryGood: number
+        good: number
+        acceptable: number
+    }
+    info: {
+        name: string
+        cover: string
+    }
+}
