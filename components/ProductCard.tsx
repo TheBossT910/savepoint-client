@@ -154,16 +154,16 @@ const ProductCard = ( props: ProductCardProps ) => {
 
             {/* Condition (specific) */}
             <View style={ styles.row }>
-                <View style={ styles.typesConditionsCard }>
+                <View style={[ styles.typesConditionsCard, { backgroundColor: '#66FA66'} ]}>
                     <Text style={ styles.text }>Excellent { props.product.condition.Excellent } </Text>
                 </View>
-                <View style={ styles.typesConditionsCard }>
+                <View style={[ styles.typesConditionsCard, { backgroundColor: '#B5F226'} ]}>
                     <Text style={ styles.text }>Very Good { props.product.condition['Very Good'] } </Text>
                 </View>
-                <View style={ styles.typesConditionsCard }>
+                <View style={[ styles.typesConditionsCard, { backgroundColor: '#FAB62E'} ]}>
                     <Text style={ styles.text }>Good { props.product.condition.Good } </Text>
                 </View>
-                <View style={ styles.typesConditionsCard }>
+                <View style={[ styles.typesConditionsCard, { backgroundColor: '#FF0000'} ]}>
                     <Text style={ styles.text }>Acceptable { props.product.condition.Acceptable }</Text>
                 </View>
             </View>
