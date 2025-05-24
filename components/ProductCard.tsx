@@ -115,7 +115,7 @@ const ProductCard = ( props: ProductCardProps ) => {
                 </Text>
             </View>
             <View style={[ styles.addButtonArea, styles.childLeftBottom ]}>
-                <CustomButton style={ styles.button } properties={ styles.buttonProperties } text={ 'Quick Add' } onPress={ () => console.log('Buy button pressed') }/>
+                <CustomButton style={ styles.button } properties={ styles.buttonProperties } text={ 'Quick Add' } onPress={ () => console.log('Quick add button pressed') }/>
             </View>
         </ImageBackground>
 
