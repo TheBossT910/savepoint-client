@@ -15,6 +15,9 @@ const useStyles = () => {
             alignItems: 'center',
             justifyContent: 'center',
         },
+        productCard: {
+            margin: 5
+        }
     });
 
     // exporting style sheet

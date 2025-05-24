@@ -3,12 +3,16 @@
 // Product card componnent
 
 import React from 'react';
-import { View, Text, StyleSheet, ImageBackground } from 'react-native';
+import { View, Text, StyleSheet, ImageBackground, Pressable } from 'react-native';
 import { CustomButton } from '@/components/CustomButton';
 import { IProductsInventory } from '@/interfaces/api';
+import { useRouter } from 'expo-router'
 
 type ProductCardProps = {
     product: IProductsInventory
+    style: {
+        margin: number
+    }
 };
 
 const ProductCard = ( props: ProductCardProps ) => {
@@ -18,37 +22,47 @@ const ProductCard = ( props: ProductCardProps ) => {
 
     const styles = StyleSheet.create({
         container: {
-            flex: 1,
+            // flex: 1,
+            marginVertical: props.style.margin,
             alignItems: 'center',
             justifyContent: 'center',
         },
         productCard: {
             flexDirection: 'row',
             backgroundColor: 'red',
-            padding: 10,
+            // padding: 5,
             minHeight: 200,
         },
         childRight: {
-            backgroundColor: 'blue',
+            backgroundColor: '#969696',
             // margin: 5,
             padding: 10,
             width: width + widthBalance,
             justifyContent: 'space-between'
         },
         childLeftTop: {
-            backgroundColor: '#33b249',
+            backgroundColor: 'rgba(51, 178, 72, 0.7)',
             width: width - widthBalance,
+            margin: 10,
+            borderRadius: 5
         },
         childLeftBottom: {
             width: width - widthBalance,
+            margin: 10
         },
         text: {
-            color: 'cyan',
+            color: 'white',
             fontWeight: '900',
             textAlign: 'center',
         },
         title: {
             marginBottom: 5
+        },
+        titleText: {
+            color: 'white',
+            fontWeight: '900',
+            textAlign: 'center',
+            fontSize: 20
         },
         row: {
             flexDirection: 'row',
@@ -56,7 +70,7 @@ const ProductCard = ( props: ProductCardProps ) => {
         },
         typesConditionsCard: {
             borderRadius: 5,
-            backgroundColor: 'red',
+            backgroundColor: '#FF0000',
             padding: 1,
             margin: 2,
         },
@@ -71,16 +85,23 @@ const ProductCard = ( props: ProductCardProps ) => {
             position: 'absolute',
             bottom: 0,
             alignItems: 'center',
+            // paddingBottom: 5
         },
         button: {
-            width: 100,
+            width: width - widthBalance,
             height: 30,
             padding: 0,
-            backgroundColor: 'red',
+            backgroundColor: '#FF0000',
             color: 'white',
         },
+        buttonProperties: {
+            backgroundColor: 'rgba(150, 150, 150, 0.7)',
+            color: 'white', 
+            borderRadius: 10
+        }
     });
 
+    const router = useRouter();
     const total = props.product.type.used + props.product.type.new + props.product.type.complete;
 
   return (
@@ -94,16 +115,22 @@ const ProductCard = ( props: ProductCardProps ) => {
                 </Text>
             </View>
             <View style={[ styles.addButtonArea, styles.childLeftBottom ]}>
-                <CustomButton style={ styles.button } properties={{ backgroundColor: '#33b249', color: 'white', borderRadius: 5 }} text={ 'Quick Add' } onPress={ () => console.log('Buy button pressed') }/>
+                <CustomButton style={ styles.button } properties={ styles.buttonProperties } text={ 'Quick Add' } onPress={ () => console.log('Buy button pressed') }/>
             </View>
         </ImageBackground>
 
         {/* Info area */}
         <View style={ styles.childRight }>
             {/* Title */}
-            <View style={ styles.title }>
-                <Text style={ styles.text }>{ props.product.info.name }</Text>
-            </View>
+            <Pressable key={ props.product.info.id } onPress={ () => router.navigate({
+                    pathname: '/(tabs)/details/[id]',
+                    params: { 'id': props.product.info.id }
+
+                }) }>
+                <View style={ styles.title }>
+                    <Text style={ styles.titleText }>{ props.product.info.name }</Text>
+                </View>
+            </Pressable>
           
           {/* Conditions */}
           <View>

@@ -34,5 +34,6 @@ export interface IProductsInventory {
     info: {
         name: string
         cover: string
+        id: string
     }
 }
