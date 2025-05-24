@@ -102,7 +102,7 @@ const ProductCard = ( props: ProductCardProps ) => {
     });
 
     const router = useRouter();
-    const total = props.product.type.used + props.product.type.new + props.product.type.complete;
+    const total = props.product.type.New + props.product.type.Complete + props.product.type.Loose + props.product.type.Parts;
 
   return (
     <View style={ styles.container }>
@@ -137,29 +137,32 @@ const ProductCard = ( props: ProductCardProps ) => {
             {/* Conditon type */}
             <View style={ styles.row }>
                 <View style={ styles.typesConditionsCard }>
-                    <Text style={ styles.typesText }>New { props.product.type.new }</Text>
+                    <Text style={ styles.typesText }>New { props.product.type.New }</Text>
                 </View>
                 <View style={ styles.typesConditionsCard }>
-                    <Text style={ styles.typesText }>Complete { props.product.type.complete }</Text>
+                    <Text style={ styles.typesText }>Complete { props.product.type.Complete }</Text>
                 </View>
                 <View style={ styles.typesConditionsCard }>
-                    <Text style={ styles.typesText }>Used { props.product.type.used }</Text>
+                    <Text style={ styles.typesText }>Loose { props.product.type.Loose }</Text>
+                </View>
+                <View style={ styles.typesConditionsCard }>
+                    <Text style={ styles.typesText }>Parts { props.product.type.Parts }</Text>
                 </View>
             </View>
 
             {/* Condition (specific) */}
             <View style={ styles.row }>
                 <View style={ styles.typesConditionsCard }>
-                    <Text style={ styles.text }>Excellent { props.product.condition.excellent } </Text>
+                    <Text style={ styles.text }>Excellent { props.product.condition.Excellent } </Text>
                 </View>
                 <View style={ styles.typesConditionsCard }>
-                    <Text style={ styles.text }>Very Good { props.product.condition.veryGood } </Text>
+                    <Text style={ styles.text }>Very Good { props.product.condition['Very Good'] } </Text>
                 </View>
                 <View style={ styles.typesConditionsCard }>
-                    <Text style={ styles.text }>Good { props.product.condition.good } </Text>
+                    <Text style={ styles.text }>Good { props.product.condition.Good } </Text>
                 </View>
                 <View style={ styles.typesConditionsCard }>
-                    <Text style={ styles.text }>Acceptable { props.product.condition.acceptable }</Text>
+                    <Text style={ styles.text }>Acceptable { props.product.condition.Acceptable }</Text>
                 </View>
             </View>
           </View>

@@ -2,7 +2,7 @@
 // May 17, 2025
 // API services
 
-import { IProducts } from "../interfaces/api"
+import { IProducts, IProductsInventory } from "../interfaces/api"
 import axios from "axios"
 
 const address = '192.168.2.97'
@@ -38,7 +38,13 @@ export const developerService = {
     }
 }
 
-// DEBUG
-// console.log(fetchProducts())
-// developerService.getGetProducts('e408dad8-23e1-46c5-9b8a-7e47cc7eb114')
-//     .then( (data) => console.log(data) )
+export const posService = {
+    getGetAll: async ( storeId: string ) => {
+            const response = await axios.get<IProductsInventory[]>(`http://${address}:8080/pos/get-all`, {
+            params: {
+                store_id: storeId,
+            }
+        })
+        return response.data
+    }
+}

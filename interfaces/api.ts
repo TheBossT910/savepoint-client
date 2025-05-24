@@ -20,16 +20,17 @@ export interface IProducts {
 
 export interface IProductsInventory {
     type: {
-        new: number
-        complete: number
-        used: number
+        'New': number
+        'Complete': number
+        'Loose': number
+        'Parts': number
     }
     condition: {
-        new: number
-        excellent: number
-        veryGood: number
-        good: number
-        acceptable: number
+        'New': number
+        'Excellent': number
+        'Very Good': number
+        'Good': number
+        'Acceptable': number
     }
     info: {
         name: string
