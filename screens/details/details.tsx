@@ -12,7 +12,7 @@ import { CustomButton } from '@/components/CustomButton';
 
 // service dependancies
 import { developerService } from '@/services/api';
-import { Products } from '@/interfaces/api';
+import { IProducts } from '@/interfaces/api';
 import { defaultProduct } from '@/constants/api';
 
 // main screen
@@ -38,7 +38,7 @@ const DetailsScreen = ( id: string ) => {
     }
 
     // using services
-    const [product, setProduct] = useState<Products>(defaultProduct);
+    const [product, setProduct] = useState<IProducts>(defaultProduct);
     const [productImages, setProductImages] = useState<React.JSX.Element[]>([])
     useEffect( () => {
         // reset previous data

@@ -8,7 +8,7 @@ import useStyles from './styles';
 
 // service dependancies
 import { fetchProducts } from '@/services/api';
-import { Products } from '@/interfaces/api';
+import { IProducts } from '@/interfaces/api';
 
 
 
@@ -16,7 +16,7 @@ const ServicesScreen = () => {
     const { styles } = useStyles();
 
     // using our services
-    const [products, setProducts] = useState<Products[]>([]);
+    const [products, setProducts] = useState<IProducts[]>([]);
 
     // runs server-side code on load
     useEffect( () => {

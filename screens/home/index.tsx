@@ -11,7 +11,7 @@ import useStyles from "./styles";
 
 // service dependancies
 import { productService } from '@/services/api';
-import { Products } from '@/interfaces/api';
+import { IProducts } from '@/interfaces/api';
 
 // main screen
 const HomeScreen = () => {
@@ -20,7 +20,7 @@ const HomeScreen = () => {
     const router = useRouter();
 
     // function to create product elements
-    const createProducts = (rawProducts: Products[]) => {
+    const createProducts = (rawProducts: IProducts[]) => {
         const formattedProducts = rawProducts.map( product => {
             return(
                 <Pressable key={ product.id } onPress={ () => router.navigate({

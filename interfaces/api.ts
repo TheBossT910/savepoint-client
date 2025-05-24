@@ -2,7 +2,7 @@
 // May 17, 2025
 // API interfaces
 
-export interface Products {
+export interface IProducts {
     id: string,
     created_at: string,
     name: string,
