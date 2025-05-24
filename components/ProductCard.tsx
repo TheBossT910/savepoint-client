@@ -60,6 +60,8 @@ const ProductCard = ( props: ProductCardProps ) => {
         },
         titleText: {
             color: 'white',
+            textDecorationColor: 'blue',
+            textDecorationLine: 'underline',
             fontWeight: '900',
             textAlign: 'center',
             fontSize: 20
