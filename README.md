@@ -1,4 +1,4 @@
-# SavePoint - Game Collection Manager
+# SavePoint - Game Collection Manager (DEPRECATED - Look at savepoint-web)
 **Savepoint** is a cross-platform app for tracking your video game collection (physical or digital). This app is more aimed towards game collectors and enthusiants rather than your average casual gamer. 
 
 It is meant for users to easily scan (via barcodes), track, and catelouge their video games to expand their game collection! Users will be able to make informed purchasing decisions (i.e. should I buy Mario Kart for $80? Do I need to buy the Nintendo Switch 2 version of The Legend of Zelda: Tears of the Kingdom if I already own the Switch 1 version?) based backwards compatibility and PriceCharting pricing data, and will be able to view their **LOCAL** retro gaming store's inventory, pricing, and trade-ins value online through the app. Users will also be able to export their data into a spreadsheet. For users, its a convinient way to track and expand their game collection. No more pesky spreadsheet to track your games!
